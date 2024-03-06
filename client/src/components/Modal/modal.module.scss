@@ -1,0 +1,59 @@
+$purple_color: #6c63ff;
+$white_color: white;
+$purple_ligth_color: #c3c1e5;
+
+@mixin flex($fd, $ai, $gap) {
+  display: flex;
+  flex-direction: $fd;
+  align-items: $ai;
+  gap: $gap;
+}
+
+@mixin input_btn($border, $br, $pad) {
+  display: block;
+  border: $border;
+  border-radius: $br;
+  padding: $pad;
+  background-color: transparent;
+}
+
+@mixin image-block($default) {
+  background-image: $default;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.modal {
+  @include flex(column, center, 20px);
+  width: 50%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  input {
+    &:nth-child(1) {
+      width: 256px;
+    }
+
+    &:nth-child(2) {
+      width: 389px;
+    }
+
+    &::placeholder {
+      color: $purple_ligth_color;
+    }
+  }
+
+  .btns {
+    @include flex(row, center, 20px);
+    justify-content: space-between;
+  }
+}

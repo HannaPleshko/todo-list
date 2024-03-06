@@ -1,0 +1,59 @@
+$purple_color: #6c63ff;
+$white_color: white;
+$purple_ligth_color: #c3c1e5;
+
+@mixin flex($fd, $ai, $gap) {
+  display: flex;
+  flex-direction: $fd;
+  align-items: $ai;
+  gap: $gap;
+}
+
+@mixin input_btn($border, $br, $pad) {
+  display: block;
+  border: $border;
+  border-radius: $br;
+  padding: $pad;
+  background-color: transparent;
+}
+
+@mixin image-block($default) {
+  background-image: $default;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.wrapper {
+  @include flex(column, center, 0);
+
+  .modalOpen {
+    background-color: #dadada;
+  }
+
+  h1 {
+    font: 500 26px 'Roboto';
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .form {
+    display: flex;
+    gap: 16px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .checked {
+    text-decoration: line-through;
+    color: #1976d2;
+  }
+
+  .def {
+    color: black;
+  }
+}
